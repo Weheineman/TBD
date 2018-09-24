@@ -1,0 +1,5 @@
+$(ARMGNU)-as vectors.s -o vectors.o
+$(ARMGNU)-gcc $(COPS) -c gameoflife.c -o gameoflife.o -std=c99
+$(ARMGNU)-ld vectors.o gameoflife.o -T memmap -o gameoflife.elf
+$(ARMGNU)-objcopy gameoflife.elf -O binary gameoflife.bin
+$(ARMGNU)-objcopy gameoflife.elf -O binary kernel.img
