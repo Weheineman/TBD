@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.14)  24 SEP 2018 01:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.14)  28 SEP 2018 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,46 +906,65 @@ Package pdftex.def Info: unrlogo.png  used on input line 60.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./unrlogo.png>]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ± in font cmr10!
-
-Overfull \hbox (2.52829pt too wide) in paragraph at lines 90--92
- [][] \OT1/cmr/m/n/10 Si bien en el diagrama Entidad-Relaci^^Son se consider^^S
-o a los Clientes, Vendedores
- []
-
+<ER.png, id=63, 1360.08125pt x 677.53125pt>
+File: ER.png Graphic file (type png)
+<use ER.png>
+Package pdftex.def Info: ER.png  used on input line 85.
+(pdftex.def)             Requested size: 413.99895pt x 206.22803pt.
+File: ER.png Graphic file (type png)
+<use ER.png>
+Package pdftex.def Info: ER.png  used on input line 85.
+(pdftex.def)             Requested size: 413.99895pt x 206.22803pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 \newpage
-              [1]
+l.90 \newpage
+              [1 <./ER.png>]
+<esq_tablas.png, id=69, 1050.92625pt x 906.38625pt>
+File: esq_tablas.png Graphic file (type png)
+<use esq_tablas.png>
+Package pdftex.def Info: esq_tablas.png  used on input line 96.
+(pdftex.def)             Requested size: 345.0pt x 297.54556pt.
+File: esq_tablas.png Graphic file (type png)
+<use esq_tablas.png>
+Package pdftex.def Info: esq_tablas.png  used on input line 96.
+(pdftex.def)             Requested size: 345.0pt x 297.54556pt.
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ± in font cmr10!
+
+Overfull \hbox (2.52829pt too wide) in paragraph at lines 99--101
+ [][] \OT1/cmr/m/n/10 Si bien en el diagrama Entidad-Relaci^^Son se consider^^S
+o a los Clientes, Vendedores
+ []
+
+[2 <./esq_tablas.png>]
 No file informe.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
 (./informe.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 99.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 99.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: 90D24B04252991A945CE7028EF7B51BE;116.
  ) 
 Here is how much of TeX's memory you used:
- 29821 strings out of 492982
- 613785 string characters out of 6134896
- 710809 words of memory out of 5000000
- 33008 multiletter control sequences out of 15000+600000
- 533339 words of font info for 32 fonts, out of 8000000 for 9000
+ 29835 strings out of 492982
+ 613962 string characters out of 6134896
+ 709810 words of memory out of 5000000
+ 33018 multiletter control sequences out of 15000+600000
+ 533793 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,5n,101p,10498b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,13n,101p,10498b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on informe.pdf (2 pages, 222271 bytes).
+Output written on informe.pdf (3 pages, 333971 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 6 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 97 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
+ 7 named destinations out of 1000 (max. 500000)
+ 188 words of extra memory for PDF output out of 10000 (max. 10000000)
 
