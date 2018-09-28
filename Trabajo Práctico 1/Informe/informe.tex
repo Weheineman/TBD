@@ -1,5 +1,7 @@
 \documentclass{article}
 
+
+\usepackage[export]{adjustbox}
 \usepackage{verbatim}
 \usepackage{xcolor}
 \usepackage{listings}
@@ -65,7 +67,6 @@ every listing line={\textcolor{pink}{\small\ttfamily\bfseries Monika \$> }}}
 	{\huge\bfseries Modelado de Datos \par}
 	\vspace{2cm}
 	{\Large\itshape Tom\'as Fern\'andez de Luco F-3443/6 \\ Gianni Georg Weinand W-0528/2 \\ Ignacio Sebasti\'an Molin\'e M-6466/1 \par}
-
 	\vfill
 
 % Bottom of the page
@@ -78,28 +79,28 @@ every listing line={\textcolor{pink}{\small\ttfamily\bfseries Monika \$> }}}
 \newpage
 \end{comment}
 
-\section{Diagrama Entidad-Relaci\'on}
-
-\begin{align*}
-\includegraphics[width=1.2\textwidth, angle = 270]{ER}
-\end{align*}
+\section{Comentarios y Aclaraciones}
+\subsection{Diagrama Entidad-Relaci\'on}
 
 \paragraph{}
 Representamos a las visitas como una entidad d\'ebil dependiente de inmueble. La raz\'on de esto es que puede haber un \'unico cliente asignado para visitar por cada combinaci\'on posible de Inmueble y Fecha/Hora. Si la visita hubiera sido una relaci\'on entre Cliente e Inmueble, la clave del Cliente formar\'ia parte de la clave de la Visita y se podr\'ian crear entradas de visitas al mismo Inmueble en la misma Fecha y hora con clientes distintos.
 
-\newpage
-
-\section{Diagrama de Tablas}
-
-\begin{align*}
-\includegraphics[width=\textwidth]{esq_tablas}
-\end{align*}
-
+\subsection{Diagrama de Tablas}
 \paragraph{}
 Si bien en el diagrama Entidad-Relaci\'on se consider\'o a los Clientes, Vendedores y Propietarios como entidades separadas sin generalizaci\'on, en el pasaje a tablas se consult\'o la posibilidad de crear una tabla \'unica que tenga algunos campos posiblemente nulos. Como la cantidad de los mismos no era tan grande con respecto al n\'umero de campos en com\'un, se opt\'o por eliminar la redundancia que podr\'ia causarse por tener entradas en varias tablas si una persona cumpliera con m\'as de un rol.
 En este caso en particular, suponemos que existir\'ia una cantidad de personas con roles m\'ultiples lo suficientemente relevante como para justificar el incremento en el tamaño de almacenamiento requerido por una entrada en la tabla. Si la redundancia entre categor\'ias fuera baja, ser\'ia recomendable optar por el modelo de tres tablas.
 
-\newpage
+\section*{Ap\'endice}
+\subsection{Diagrama Entidad-Relaci\'on}
+\begin{align*}
+\includegraphics[max size={\textwidth}{.95\textheight}]{ER}
+\end{align*}
+
+\subsection{Diagrama de Tablas}
+\begin{align*}
+\includegraphics[max size={\textwidth}{.95\textheight}]{esq_tablas}
+\end{align*}
+
 
 \nocite{*}
 \bibliography{referencias}
