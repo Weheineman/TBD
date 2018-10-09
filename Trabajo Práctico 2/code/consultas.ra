@@ -1,0 +1,201 @@
+/* Item 1) Obtener los nombres de los duenos de los inmuebles. */ 
+
+/*\project_{nombre,apellido} (
+
+  PoseeInmueble
+
+  \join_{codigo_propietario = codigo}
+
+  Persona
+
+);*/
+
+/* Item 2) Obtener todos los codigos de los inmuebles cuyo precio esta en el intervalo 600.000 a 700.000 inclusive. */ 
+
+/*\project_{codigo} (
+
+  \select_{precio >= 600000 and precio <= 700000}
+
+  Inmueble
+);*/
+
+/* Item 3) Obtener los nombres de los clientes atendidos por la vendedora Mirta Gonzalez. */ 
+
+/*\project_{nombre,apellido} (
+  
+  ( \rename_{codigo_cliente, codigo_vendedor} Cliente
+  
+    \join_{codigo_cliente = codigo}
+  
+    \project_{codigo, nombre, apellido} Persona)
+  
+  \join
+  
+  \rename_{codigo_vendedor} (
+    \project_{codigo} (
+      \select_{nombre = "Mirta" and apellido = "Gonzalez"} Persona
+    )
+  )
+
+);*/
+
+/* Item 4) Obtener todos los pares cliente (nombre, apellido) - inmueble (codigo, direccion), tal que los inmuebles
+pertenezcan a una zona preferida por el cliente. */ 
+
+/*\project_{nombre, apellido, codigo, direccion} (
+
+  PrefiereZona
+  
+  \join
+  
+  Inmueble
+  
+  \join
+  
+  \rename_{codigo_cliente, nombre, apellido, domicilio, telefono} Persona
+
+);*/
+
+/* Item 5) Obtener los nombres de los clientes que prefieran inmuebles solo en la zona Norte de Santa Fe. */ 
+
+/*\project_{nombre,apellido} (
+
+  ( \project_{codigo_cliente} PrefiereZona 
+    
+    \diff
+    
+    \project_{codigo_cliente}
+      ( \select_{nombre_poblacion <> "Santa Fe" or nombre_zona <> "Norte"} PrefiereZona))
+
+  \join_{codigo_cliente = codigo}
+
+  Persona
+
+);*/
+
+/* Item 6) Obtener los nombres de los empleados que atiendan a algun cliente que prefiera la zona Centro de
+Rosario. */ 
+
+/*\project_{nombre,apellido} (
+
+  ( \select_{nombre_poblacion = "Rosario" and nombre_zona = "Centro"}
+    ( Cliente
+    
+      \join_{codigo = codigo_cliente}
+    
+      PrefiereZona))
+  
+  \join
+
+  \rename_{vendedor, nombre, apellido}
+    ( \project_{codigo, nombre, apellido} Persona)
+);*/
+
+/* Item 7) Obtener los nombres de los vendedores que atienden a otros vendedores. */
+
+/* Suponemos que los vendedores son los elementos de la tabla Vendedores (independientemente de si estan atendiendo a un cliente o no). */ 
+
+/*\project_{nombre,apellido} (
+
+  ( Vendedor
+    
+    \join
+    
+    Cliente)
+  
+  \join
+
+  \rename_{vendedor, nombre, apellido}
+    ( \project_{codigo, nombre, apellido} Persona)
+);*/
+
+/* Item 8) Obtener los nombres de los clientes con visitas programadas entre el 6 y el 8 de noviembre de 2014,
+junto con su telefono y el nombre de su vendedor asignado. */
+
+
+/*\project_{nombre, apellido, telefono, nombre_vendedor, apellido_vendedor} (
+
+  \project_{codigo, vendedor}
+
+    ( (\rename_{codigo, codigo_inmueble, fecha_hora}
+    
+        \select_{fecha_hora >= "2014-11-06 00:00:00" and fecha_hora < "2014-11-09 00:00:00"} Visitas)
+    
+      \join
+    
+      Cliente)
+  
+  \join
+
+  \rename_{vendedor, nombre_vendedor, apellido_vendedor}
+    ( \project_{codigo, nombre, apellido} Persona)
+    
+  \join
+  
+  \project_{codigo, nombre, apellido, telefono} Persona
+);*/
+
+
+/* Item 9) Obtener los nombres de los clientes que prefieran inmuebles en todas las zonas de Rosario. */
+
+
+/*\project_{nombre, apellido} (
+  
+  ( \project_{codigo_cliente} PrefiereZona
+    
+    \diff
+    
+    \project_{codigo_cliente} (
+      ( \project_{codigo_cliente} PrefiereZona
+        
+        \cross
+        
+        \select_{nombre_poblacion = "Rosario"} Zona
+      )
+      
+      \diff
+      
+      PrefiereZona
+    )
+  )
+  
+  \join
+  
+  \rename_{codigo_cliente, nombre, apellido}
+    \project_{codigo, nombre, apellido} Persona
+);*/
+
+
+/* Item 10) Obtener los nombres de los vendedores que tengan dos visitas asignadas con igual fecha y hora, junto con la fecha y la hora
+en cuestion. */
+
+/* Suponemos que no existen dos visitas al mismo inmueble en la misma fecha y hora. */
+
+/*\project_{nombre, apellido, fecha_hora} (
+  (
+
+    \select_{codigo_inmueble <> codigo_inmueble2}
+
+    ( ( \rename_{codigo_cliente, codigo} Cliente
+      
+        \join
+      
+        Visitas
+      )
+      
+      \join
+      
+      \rename_{codigo_cliente2, codigo, codigo_inmueble2, fecha_hora}
+        ( \rename_{codigo_cliente, codigo} Cliente
+        
+          \join
+        
+          Visitas
+        )
+    )
+  )
+  
+  \join
+  
+  Persona
+);*/
