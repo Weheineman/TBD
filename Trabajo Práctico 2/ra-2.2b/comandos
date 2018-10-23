@@ -1,0 +1,4 @@
+java -ea -jar ra.jar -h
+java -jar ra.jar inmobiliaria.properties -i inmobiliaria.ra
+java -ea -jar ra.jar inmobiliaria.properties -i consultas.ra
+java -ea -jar ra.jar inmobiliaria.properties Y LUEGO \help;

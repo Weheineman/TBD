@@ -2,6 +2,10 @@
 -- ~ Obtener los números de los proyectos donde se utilice al menos una de las partes suministradas por el
 -- ~ proveedor S1.
 
-SELECT		jCod
-FROM		spj
-WHERE		()
+SELECT      DISTINCT jCod
+FROM        spj AS spj1
+WHERE       EXISTS
+            (SELECT     * 
+             FROM       spj
+             WHERE      spj.sCod = 'S1'
+             AND        spj.pCod = spj1.pCod);
