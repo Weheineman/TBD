@@ -1,6 +1,8 @@
-def cierreAlfa(alfa, F):
-	resultado = set(alfa)
-	dependencias = [(set(x), set(y)) for (x,y) in F]
+# ~ Dado un conjunto de atributos alfa y un conjunto de dependencias 
+# ~ funcionales F, devuelve el cierre de alfa bajo F.
+def cierreAlfa(ALFA, EFE):
+	resultado = set(ALFA)
+	dependencias = [(set(x), set(y)) for (x,y) in EFE]
 	cantidad = -1
 	nuevaCantidad = len(resultado)
 	while(cantidad != nuevaCantidad):
@@ -14,18 +16,36 @@ def cierreAlfa(alfa, F):
 		
 	return list(resultado)
 
-#~ Set3
-#~ ALFA = ['B', 'D']
-#~ EFE = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
 
-#~ Set4
-#~ ALFA = ['A', 'C']
-#~ EFE = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
+# ~ Set3
+# ~ ARGUMENTOS:
+ALFA1 = ['B', 'D']
+EFE1  = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
+# ~ RESULTADO OBTENIDO
+# ~ ALFA+ = ['E', 'B', 'D', 'F']
 
-#~ Set5
-#~ ALFA = ['F', 'G']
-#~ EFE = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
+# ~ Set4
+# ~ ARGUMENTOS:
+ALFA2 = ['A', 'C']
+EFE2  = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
+# ~ RESULTADO OBTENIDO
+# ~ ALFA+ = ['C', 'D', 'A', 'G', 'B']
+
+# ~ Set5
+# ~ ARGUMENTOS:
+ALFA3 = ['F', 'G']
+EFE3  = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
+# ~ RESULTADO OBTENIDO
+# ~ ALFA+ = ['B', 'E', 'C', 'D', 'F', 'A', 'G']
 
 
-def pepe():
-	print(cierreAlfa(ALFA, EFE))
+
+# ~ Calcula el cierre de alfa y lo imprime en pantalla
+def main(ALFA, EFE, n):
+    print("Alfa"+ str(n) +"+: ", end = "")
+    print(cierreAlfa(ALFA, EFE))
+
+if __name__ == "__main__":
+    main(ALFA1,EFE1,1)
+    main(ALFA2,EFE2,2)
+    main(ALFA3,EFE3,3)
