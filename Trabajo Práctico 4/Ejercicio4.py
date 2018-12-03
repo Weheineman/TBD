@@ -57,18 +57,25 @@ def clavesCandidatas(R, F):
 # ~ ARGUMENTOS:
 ERE3 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 EFE3 = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
+# ~ RESULTADO OBTENIDO
+# ~ CLAVES = [['D', 'A', 'B']]
 
 # ~ Set4
 # ~ ARGUMENTOS:
 ERE4 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 EFE4 = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
+# ~ RESULTADO OBTENIDO
+# ~ CLAVES = [['F', 'H'], ['F', 'E']]
 
 # ~ Set5
 # ~ ARGUMENTOS:
 ERE5 = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 EFE5 = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
-	
-	
+# ~ RESULTADO OBTENIDO
+# ~ CLAVES = [['A'], ['E'], ['D'], ['C'], ['B'], ['F', 'G']]
+
+
+
 #Calcula las claves candidatas y las imprime en pantalla	
 def main(ERE, EFE, n):
     print("Claves candidatas del Set "+ str(n) +": ", end = "")
