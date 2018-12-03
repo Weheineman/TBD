@@ -1,57 +1,54 @@
 def cierreAlfa(alfa, F):
 	resultado = set(alfa)
-	dependencias = [(set(x), set(y)) for (x,y) in F]
 	cantidad = -1
 	nuevaCantidad = len(resultado)
 	while(cantidad != nuevaCantidad):
 		cantidad = nuevaCantidad
-		
-		for (x, y) in dependencias:
+		for (x, y) in F:
 			if x < resultado or x == resultado:
 				resultado = resultado | y
-		
 		nuevaCantidad = len(resultado)
-		
-	return list(resultado)
+	return resultado
+
 
 def partes(lista):
 	if lista == []: 
 		return []
-	if len(lista) == 1:
-		return [[lista[0]]]
 	head = lista[0]
 	subconjuntos  = partes(lista[1:])
 	subconjuntos2 = [ [head] + x for x in subconjuntos]
 	return [[head]] + subconjuntos + subconjuntos2	
 
+
 def filtrar(cant, conjunto):
 	return [x for x in conjunto if len(x) == cant]
 
 
-
 def clavesCandidatas(R, F):
+	cantAtributos = len(R)
 	dependencias = [(set(x), set(y)) for (x,y) in F]
 	basica = set(R)
 	for (x, y) in dependencias:
 		basica = basica - y
 	
 	clavePosible = basica
-	if(len(cierreAlfa(clavePosible, F)) == len(R)):
-				resultado = [list(clavePosible)]
+	largoClavePosible = len(clavePosible)
+	cierreClavePosible = cierreAlfa(clavePosible, F)
+	largoCierrePosible = len(cierreClavePosible)
+	if(largoCierrePosible == cantAtributos):
+		resultado = [list(clavePosible)]
 	else:					
-			restantes = set(R) - set(cierreAlfa(basica, F))
-			resultado = []
-			cantExtra = 0
-			while (len(restantes) != 0 and cantExtra <= len(R)):
-				cantExtra += 1
-				posibles = map(set, filtrar(cantExtra, partes(list(restantes))))
-				for extra in posibles:
-					intento = basica | extra
-					if(len(cierreAlfa(intento, F)) == len(R)):
-						resultado = resultado + [list(intento)]
-						restantes = restantes - extra
-		
-		
+		restantes = set(R) - cierreClavePosible
+		resultado = []
+		cantExtra = 0
+		while (restantes != set() and cantExtra <= cantAtributos - largoCierrePosible):
+			cantExtra += 1
+			posibles = map(set, filtrar(cantExtra, partes(list(restantes))))
+			for extra in posibles:
+				intento = basica | extra
+				if(len(cierreAlfa(intento, F)) == cantAtributos):
+					resultado = resultado + [list(intento)]
+					restantes = restantes - extra
 		
 	return resultado
 
