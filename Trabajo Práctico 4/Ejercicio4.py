@@ -53,27 +53,31 @@ def clavesCandidatas(R, F):
 	return resultado
 
 
-
-#~ Set3
-#~ ALFA = ['B', 'D']
+# ~ Set3
+# ~ ARGUMENTOS:
 ERE3 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 EFE3 = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
 
-#~ Set4
-#~ ALFA = ['A', 'C']
+# ~ Set4
+# ~ ARGUMENTOS:
 ERE4 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 EFE4 = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
 
-#~ Set5
-#~ ALFA = ['F', 'G']
+# ~ Set5
+# ~ ARGUMENTOS:
 ERE5 = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 EFE5 = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
-
-#~ Set6
-ERE6 = ['A','B','C','D','E']
-EFE6 = [(['A', 'B'], ['E']), (['A', 'B'], ['C']), (['A', 'B'], ['D']), (['A', 'C', 'D'], ['E']), (['A', 'C', 'D'], ['B'])]
-		
 	
+	
+#Calcula las claves candidatas y las imprime en pantalla	
+def main(ERE, EFE, n):
+    print("Claves candidatas del Set "+ str(n) +": ", end = "")
+    print(clavesCandidatas(ERE, EFE))
+
+if __name__ == "__main__":
+    main(ERE3,EFE3,3)
+    main(ERE4,EFE4,4)
+    main(ERE5,EFE5,5)	
 	
 	
 	
