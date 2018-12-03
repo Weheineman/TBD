@@ -33,7 +33,7 @@ def clavesCandidatas(R, F):
 	
 	clavePosible = basica
 	largoClavePosible = len(clavePosible)
-	cierreClavePosible = cierreAlfa(clavePosible, F)
+	cierreClavePosible = cierreAlfa(clavePosible, dependencias)
 	largoCierrePosible = len(cierreClavePosible)
 	if(largoCierrePosible == cantAtributos):
 		resultado = [list(clavePosible)]
@@ -46,7 +46,7 @@ def clavesCandidatas(R, F):
 			posibles = map(set, filtrar(cantExtra, partes(list(restantes))))
 			for extra in posibles:
 				intento = basica | extra
-				if(len(cierreAlfa(intento, F)) == cantAtributos):
+				if(len(cierreAlfa(intento, dependencias)) == cantAtributos):
 					resultado = resultado + [list(intento)]
 					restantes = restantes - extra
 		
