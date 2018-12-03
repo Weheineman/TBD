@@ -19,22 +19,22 @@ def cierreAlfa(ALFA, EFE):
 
 # ~ Set3
 # ~ ARGUMENTOS:
-ALFA1 = ['B', 'D']
-EFE1  = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
+ALFA3 = ['B', 'D']
+EFE3  = [ (['A'], ['I']), (['A', 'B'],['C']), (['A', 'D'],['G', 'H']), (['B', 'D'],['E', 'F']), (['H'],['J']) ]
 # ~ RESULTADO OBTENIDO
 # ~ ALFA+ = ['E', 'B', 'D', 'F']
 
 # ~ Set4
 # ~ ARGUMENTOS:
-ALFA2 = ['A', 'C']
-EFE2  = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
+ALFA4 = ['A', 'C']
+EFE4  = [ (['A'], ['B', 'C']), (['C'],['D']), (['D'],['G']), (['E', 'A']), (['E', 'H']), (['H'], ['E']) ]
 # ~ RESULTADO OBTENIDO
 # ~ ALFA+ = ['C', 'D', 'A', 'G', 'B']
 
 # ~ Set5
 # ~ ARGUMENTOS:
-ALFA3 = ['F', 'G']
-EFE3  = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
+ALFA5 = ['F', 'G']
+EFE5  = [ (['A'], ['F']), (['A'],['G']), (['B'],['E']), (['C', 'D']), (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C']) ]
 # ~ RESULTADO OBTENIDO
 # ~ ALFA+ = ['B', 'E', 'C', 'D', 'F', 'A', 'G']
 
@@ -46,6 +46,6 @@ def main(ALFA, EFE, n):
     print(cierreAlfa(ALFA, EFE))
 
 if __name__ == "__main__":
-    main(ALFA1,EFE1,1)
-    main(ALFA2,EFE2,2)
     main(ALFA3,EFE3,3)
+    main(ALFA4,EFE4,4)
+    main(ALFA5,EFE5,5)
