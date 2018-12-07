@@ -1,0 +1,37 @@
+ ______________________________________________________________________________
+|                                                                              |    
+|                         Guía de uso de los programas                         |
+|______________________________________________________________________________|
+
+
+Para probar cada código con los sets de prueba dados, ejecutar el comando
+> python3 <Nombre de archivo>
+
+Si se quiere probar con otro set, ejecutar el comando
+> python3 -i <Nombre de archivo>
+Donde se abrirá una terminal interactiva con las funciones definidas.
+Para cada ejercicio, la función a llamar y los argumentos pedidos son:
+
+Ejercicio 1:
+Siendo: - R una lista de los atributos
+        - F una lista de tuplas de dos elementos que representa las dependencias.
+          El primer elemento es una lista con los atributos del determinante y 
+          el segundo es una lista de los atributos dependientes.
+clausuraF(F, R) devolverá una lista de tuplas de dos elementos que representa 
+las dependencias inferidas, siguiendo el mismo formato que F.
+
+Ejercicio 2:
+Siendo: - Alfa una lista de atributos.
+        - F una lista de tuplas de dos elementos que representa las dependencias.
+          El primer elemento es una lista con los atributos del determinante y 
+          el segundo es una lista de los atributos dependientes.  
+cierreAlfa(Alfa, F) devolverá una lista de los atributos que pertenecen al 
+cierre de Alfa bajo F.
+
+Ejercicio 4:
+Siendo: - R una lista de atributos que representa la relación. 
+        - F una lista de tuplas de dos elementos que representa las dependencias.
+          El primer elemento es una lista con los atributos del determinante y 
+          el segundo es una lista de los atributos dependientes.  
+clavesCandidatas(R, F) devolverá una lista de todas las posibles claves candidatas,
+siendo cada una de ellas una lista de atributos.
