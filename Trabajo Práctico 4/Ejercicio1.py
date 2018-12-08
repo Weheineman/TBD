@@ -76,17 +76,31 @@ def clausuraF(F, R):
 
     return resultado
 
+# ~ Set1
+# ~ ARGUMENTOS:
+ERE1 = ['A', 'B', 'C', 'D']
+EFE1 = [(['A'], ['B']), (['C', 'B'], ['A']), (['B'], ['A', 'D'])]
+# ~ RESULTADO OBTENIDO
+# ~ Cardinalidad(F+): 137
 
-EFE = [(['A', 'B'], ['C']), (['B', 'D'], ['E', 'F'])]
-ERE = ['A', 'B', 'C', 'D', 'E', 'F']
+# ~ Set2
+# ~ ARGUMENTOS:
+ERE2 = ['A', 'B', 'C', 'D', 'E', 'F']
+EFE2 = [(['A', 'B'], ['C']), (['B', 'D'], ['E', 'F'])]
+# ~ RESULTADO OBTENIDO
+# ~ Cardinalidad(F+): 1081
 
-# ~ Resultado: 1081
 
-
-# ~ Calcula la clausura de EFE, ERE e imprime su cardinalidad en pantalla.
-def pepe():
-    print((len(clausuraF(EFE, ERE))))
+# ~ Calcula la clausura de F, R e imprime su cardinalidad en pantalla.
+def main(F, R, n):
+    clausura = clausuraF(F, R)
+    print("Cardinalidad(F" + str(n) + "+): " + str(len(clausura)))
+    
+    # ~ Descomentar si se quiere ver el conjunto por extensión.
+    # ~ print("F" + str(n) + "+: ")
+    # ~ print(clausura)
 
 
 if __name__ == "__main__":
-    pepe()
+    main(EFE1, ERE1, 1)
+    main(EFE2, ERE2, 2)

@@ -102,9 +102,7 @@ EFE5 = [(['A'], ['F']), (['A'], ['G']), (['B'], ['E']), (['C', 'D']),
 # ~ Set extra que pensamos, que tiene múltiples claves candidatas.
 # ~ ARGUMENTOS:
 ERE6 = ['A', 'B', 'C', 'D', 'E', 'F']
-EFE6 = [(['B'], ['C']), (['C'], ['B']), (['D'], ['E', 'F']), (['E', 'F'],
-                                                              ['D'])]
-
+EFE6 = [(['B'], ['C']), (['C'], ['B']), (['D'], ['E', 'F']), (['E', 'F'], ['D'])]
 # ~ RESULTADO OBTENIDO
 # ~ CLAVES = [['A', 'B', 'D'], ['A', 'B', 'E', 'F'], ['A', 'C', 'D'], ['A', 'C', 'E', 'F']]
 

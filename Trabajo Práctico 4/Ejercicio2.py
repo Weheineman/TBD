@@ -42,12 +42,11 @@ EFE4 = [(['A'], ['B', 'C']), (['C'], ['D']), (['D'], ['G']), (['E', 'A']),
 ALFA5 = ['F', 'G']
 EFE5 = [(['A'], ['F']), (['A'], ['G']), (['B'], ['E']), (['C', 'D']),
         (['D', 'B']), (['E'], ['A']), (['F', 'G'], ['C'])]
-
 # ~ RESULTADO OBTENIDO
 # ~ ALFA5+: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
 
-# ~ Calcula el cierre de alfa y lo imprime en pantalla
+# ~ Calcula el cierre de alfa y lo imprime en pantalla.
 def main(ALFA, EFE, n):
     print("Alfa" + str(n) + "+: ", end="")
     print(cierreAlfa(ALFA, EFE))

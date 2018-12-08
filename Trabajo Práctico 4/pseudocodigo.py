@@ -4,7 +4,7 @@ function calcularClaves (F, R, base, resto):
 	
 	atributoActual := head(resto)
 	resto := tail(resto);
-	posibleClave = posibleClave U atributoActual;
+	posibleClave = base U atributoActual;
 	
 	if posibleClave es superclave then
 	    otrasClaves := calcularClaves(F, R, base, resto);
@@ -31,4 +31,4 @@ function clavesCandidatas (R, F):
     else
         resto := R - cierre(claveBasica, F);
         return calcularClaves (F, R, claveBasica, resto);
-end    
+end
